@@ -12,5 +12,13 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    // $people = [];
+    $people = ["Chelsea", "Bryan", "Penny", "Caia"];
+    return view('welcome', compact('people')); // can also do ['people' => $people]);
 });
+
+Route::get('/about', function () {
+    return view('pages/about'); //just in the pages directory
+});
+
+// Route::get('/', 'PagesController@home') //going to a controller

@@ -36,10 +36,23 @@
         </style>
     </head>
     <body>
-        <div class="container">
-            <div class="content">
-                <div class="title">Laravel 5</div>
-            </div>
-        </div>
+      <div class="container">
+
+        @unless (empty($people))
+          There are some people
+        @else
+          There are no people
+        @endunless
+
+        @foreach ($people as $person)
+          <li>{{ $person }}</li>
+        @endforeach
+      </div>
+
+      <!-- <div class="container"> //this is the old way using PHP, can use blade template above
+        <?//php foreach ($people as $person) : ?>
+          <li><?//= $person; ?></li>
+        <?//php endforeach; ?>
+      </div> -->
     </body>
 </html>
