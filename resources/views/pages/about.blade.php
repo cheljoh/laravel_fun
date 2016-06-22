@@ -1,15 +1,7 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Laravel</title>
+@extends('layout')
 
-        <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
-    </head>
-    <body>
-        <div class="container">
-            <div class="content">
-                <div class="title">About</div>
-            </div>
-        </div>
-    </body>
-</html>
+@section('content')
+  <div class="container">
+    ABOUT
+  </div>
+@stop
