@@ -36,19 +36,19 @@ class NotesController extends Controller
 
       //-------------------------------------------------------------------
 
-      $card->addNote(
-        new Note($request->all())
-      ); //have to make a model method on Card
+      $this->validate($request, [ //make body required
+        'body' => 'required|min:10' 
+      ]);
+
+      $note = new Note($request->all());
+
+      $card->addNote($note, 1); //have to make a model method on Card, send in user Id
 
 
 
       return back();
       // return redirect('/some/url') //another way
     }
-
-    // public function store(){ //laravel helper method
-    //   return request()->all();
-    // }
 
     public function edit(Note $note){
       return view('notes.edit', compact('note'));
