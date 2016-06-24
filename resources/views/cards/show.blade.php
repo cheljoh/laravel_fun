@@ -10,7 +10,7 @@
 
       @foreach($card->notes as $note)
 
-        <li class="list-group-item">{{ $note->body }}</li>
+        <li class="list-group-item"><a href="/notes/{{ $note->id }}/edit">{{ $note->body }} </a></li>
 
       @endforeach
 
@@ -21,7 +21,7 @@
       <h3>Add a New Note</h3>
 
       <form method="POST" action="/cards/{{ $card->id }}/notes">
-        <input type="hidden" name="_token" value="{{ csrf_token() }}"> 
+        <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <div class="form-group">
           <textarea name="body" class="form-control"></textarea>
         </div>
