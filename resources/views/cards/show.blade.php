@@ -10,7 +10,11 @@
 
       @foreach($card->notes as $note)
 
-        <li class="list-group-item"><a href="/notes/{{ $note->id }}/edit">{{ $note->body }} </a></li>
+        <li class="list-group-item">
+          <a href="/notes/{{ $note->id }}/edit">{{ $note->body }} </a>
+          {{ isset($note->user) ? <a href="#" style="float:right">{{ $note->user->username }}</a> : "" }}
+          @endif
+        </li>
 
       @endforeach
 
