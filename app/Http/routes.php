@@ -17,7 +17,7 @@ Route::patch('/notes/{note}', 'NotesController@update');
 
 Route::auth();
 
-Route::get('/home', 'HomeController@index');
+Route::get('/dashboard', 'HomeController@index');
 
 Route::get('/', function() {
   return "Welcome";
