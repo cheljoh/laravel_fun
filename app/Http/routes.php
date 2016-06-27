@@ -1,10 +1,5 @@
 <?php
 
-// Route::get('/', 'PagesController@home');
-//
-// Route::get('/about', 'PagesController@about');
-
-
 Route::get('cards', 'CardsController@index');
 
 Route::get('cards/{card}', 'CardsController@show');
@@ -20,5 +15,12 @@ Route::auth();
 Route::get('/dashboard', 'HomeController@index');
 
 Route::get('/', function() {
-  return "Welcome";
+  return view("welcome");
+});
+
+Route::get('begin', function(){
+  // Session::flash('status', 'Check out this sweet flash message'); //another option
+
+  flash('You are signed in!', "success"); //have helpers function, have to incl in composer.json "files" autoload
+  return redirect('/');
 });

@@ -1,1 +1,7 @@
+.alert--success {
+  color: green;
+}
 
+.alert--warning {
+  color: red;
+}
